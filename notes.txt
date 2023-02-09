@@ -1,13 +1,23 @@
 Git API
 JGit
+Clone Remote repo into local dir: https://github.com/centic9/jgit-cookbook/blob/master/src/main/java/org/dstadler/jgit/porcelain/CloneRemoteRepository.java
 
 Code Analysis
 Checkstyle
 PMD
-FindBugs
+FindBugs (SpotBugs now)
+--> all used as plugin in POM, but
+        -- i think it is analyzing my project
+        -- not a target project
+MIGHT NEED TO USE DEVOPS OR A LARGER PROGRAM
+https://www.linkedin.com/pulse/top-7-static-code-analysis-tools-saif-sadiq/
 
 CSV
 Apache Commons CSV
 Opencsv
 Super CSV
 
+Visualization
+JFreeChart
+Google Charts
+Excel visualization
