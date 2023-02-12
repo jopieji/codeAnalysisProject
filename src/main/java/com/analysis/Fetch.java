@@ -10,10 +10,12 @@ import java.io.IOException;
 public class Fetch {
     // PRIVATE FIELDS
     private String repoUrl;
+    private Credentials credentials;
 
     // Constructor
     public Fetch(String repoUrl) {
         this.repoUrl = repoUrl;
+        this.credentials = new Credentials();
     }
 
     // make new folder for cloned repo
@@ -31,6 +33,7 @@ public class Fetch {
         try (Git repo = Git.cloneRepository()
                 .setURI(this.repoUrl)
                 .setDirectory(createNewFolder())
+                .setCredentialsProvider(Credentials.createCredentialsProvider())
                 .call()) {
             System.out.println("Repository fetched: " + repo.getRepository().getDirectory());
             return repo;

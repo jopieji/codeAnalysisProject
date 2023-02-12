@@ -8,8 +8,8 @@ import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 public class Credentials {
 
     // fields to access with getters
-    private String user;
-    private String pass;
+    private static String user;
+    private static String pass;
 
     // constructor to fetch credentials on creation set them
     public Credentials() {
@@ -19,7 +19,7 @@ public class Credentials {
     }
 
     // function to pass back CredentialsProvider
-    public CredentialsProvider verifyCredentials() {
+    public static CredentialsProvider createCredentialsProvider() {
         CredentialsProvider cp = new UsernamePasswordCredentialsProvider(user, pass);
         return cp;
     }
