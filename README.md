@@ -9,6 +9,9 @@ The goal of this project is to:
 - practice Java, coding best practices, and working with APIs
 - test, debug, and document the project
 
+### Usage
+- run the program with your target repository url as the first argument
+
 ### Notes
 - You need to set your Github credentials in the a file called .env in the root directory.
 - Set your Github username in a variable called GITHUB_USER

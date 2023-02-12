@@ -20,11 +20,20 @@ public class Fetch {
 
     // make new folder for cloned repo
     private static File createNewFolder() throws IOException {
-        File path = File.createTempFile("testFile", "");
+        // prev version
+        //File path = File.createTempFile("testFile", "");
+        File fp = new File("./clonedRepo");
+        if (fp.mkdir()) {
+            System.out.println("Directory created ");
+        } else {
+            System.out.println("Directory cannot be created");
+        }
+        return fp;
+        /*
         if (!path.delete()) {
             throw new IOException("Could not remove temp file " + path);
         }
-        return path;
+         */
     }
 
     // cloning function
@@ -35,7 +44,7 @@ public class Fetch {
                 .setDirectory(createNewFolder())
                 .setCredentialsProvider(credentials.createCredentialsProvider())
                 .call()) {
-            System.out.println("Repository fetched: " + repo.getRepository().getDirectory());
+            System.out.println("Repository fetched: " + this.repoUrl);
             return repo;
         } catch (IOException e) {
             throw new RuntimeException(e);

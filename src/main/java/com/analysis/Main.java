@@ -2,14 +2,26 @@ package com.analysis;
 
 import org.eclipse.jgit.api.errors.GitAPIException;
 
+import java.util.Scanner;
+
 public class Main {
+
+    private String testURL = "https://github.com/jopieji/instructional-guide";
+
     public static void main(String[] args) throws GitAPIException {
         // eventually implement with keyword arguments
         // private repo to throw auth exception
-        Fetch w = new Fetch("https://github.com/jopieji/se350");
-        Fetch f = new Fetch("https://github.com/jopieji/instructional-guide");
-        w.cloneRepository();
-        // use JGit instead to show new directory created or contents
+
+        // take input from user
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your url: ");
+        String url = sc.next();
+
+        // instantiate Fetch object with user URL
+        Fetch fetch = new Fetch(url);
+        fetch.cloneRepository();
+
+        // maybe use JGit instead to show new directory created or contents
         System.out.println("Done!");
     }
 }
