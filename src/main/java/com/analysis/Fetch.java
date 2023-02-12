@@ -20,8 +20,6 @@ public class Fetch {
 
     // make new folder for cloned repo
     private static File createNewFolder() throws IOException {
-        // prev version
-        //File path = File.createTempFile("testFile", "");
         File fp = new File("./clonedRepo");
         if (fp.mkdir()) {
             System.out.println("Directory created ");
@@ -29,11 +27,6 @@ public class Fetch {
             System.out.println("Directory cannot be created");
         }
         return fp;
-        /*
-        if (!path.delete()) {
-            throw new IOException("Could not remove temp file " + path);
-        }
-         */
     }
 
     // cloning function
