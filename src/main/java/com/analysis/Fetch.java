@@ -1,6 +1,5 @@
 package com.analysis;
 
-import org.apache.commons.io.FileUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 
@@ -10,43 +9,40 @@ import java.io.IOException;
 // class to Fetch remote repository and clone it locally
 public class Fetch {
     // PRIVATE FIELDS
-    private String remoteUrl;
+    private String repoUrl;
 
     // make new folder for cloned repo
     private static File createNewFolder() throws IOException {
-        File localPath = File.createTempFile("testFile", "");
-        if (!localPath.delete()) {
-            throw new IOException("Could not remove temp file " + localPath);
+        File path = File.createTempFile("testFile", "");
+        if (!path.delete()) {
+            throw new IOException("Could not remove temp file " + path);
         }
-        return localPath;
+        return path;
     }
 
     // cloning function
-    private void cloneRepository(String remoteURL) throws GitAPIException {
-        System.out.println("Cloning repository at " + remoteURL);
+    public Git cloneRepository(String remoteURL) throws GitAPIException {
+        System.out.println("Cloning repository located at " + remoteURL);
 
         try (Git repo = Git.cloneRepository()
                 .setURI(remoteURL)
                 .setDirectory(createNewFolder())
                 .call()) {
             System.out.println("Repository fetched: " + repo.getRepository().getDirectory());
+            return repo;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (GitAPIException e) {
             throw new RuntimeException(e);
         }
-        // clean up repository to prevent memory leak
     }
-
-
-
 
     // Getters and Setters
-    public String getRemoteUrl() {
-        return remoteUrl;
+    public String getRepoUrl() {
+        return repoUrl;
     }
-    public void setRemoteUrl(String remoteUrl) {
-        this.remoteUrl = remoteUrl;
+    public void setRepoUrl(String repoUrl) {
+        this.repoUrl = repoUrl;
     }
 
 
