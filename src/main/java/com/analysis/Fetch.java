@@ -33,14 +33,15 @@ public class Fetch {
         try (Git repo = Git.cloneRepository()
                 .setURI(this.repoUrl)
                 .setDirectory(createNewFolder())
-                .setCredentialsProvider(Credentials.createCredentialsProvider())
+                .setCredentialsProvider(credentials.createCredentialsProvider())
                 .call()) {
             System.out.println("Repository fetched: " + repo.getRepository().getDirectory());
             return repo;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (GitAPIException e) {
-            throw new RuntimeException(e);
+            System.out.println("Clone failed! Make sure your repository is public! Try again");
+            return null;
         }
     }
 

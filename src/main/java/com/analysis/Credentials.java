@@ -16,10 +16,11 @@ public class Credentials {
         Dotenv dotenv = Dotenv.load();
         this.user = dotenv.get("GITHUB_USER");
         this.pass = dotenv.get("GITHUB_PASS");
+        System.out.println(user);
     }
 
     // function to pass back CredentialsProvider
-    public static CredentialsProvider createCredentialsProvider() {
+    public CredentialsProvider createCredentialsProvider() {
         CredentialsProvider cp = new UsernamePasswordCredentialsProvider(user, pass);
         return cp;
     }

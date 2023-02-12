@@ -13,3 +13,4 @@ The goal of this project is to:
 - You need to set your Github credentials in the a file called .env in the root directory.
 - Set your Github username in a variable called GITHUB_USER
 - Set your Github password in a variable called GITHUB_PASS
+- Your target repository needs to be public, or else there will be an auth error.
