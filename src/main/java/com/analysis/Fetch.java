@@ -11,6 +11,11 @@ public class Fetch {
     // PRIVATE FIELDS
     private String repoUrl;
 
+    // Constructor
+    public Fetch(String repoUrl) {
+        this.repoUrl = repoUrl;
+    }
+
     // make new folder for cloned repo
     private static File createNewFolder() throws IOException {
         File path = File.createTempFile("testFile", "");
@@ -21,11 +26,10 @@ public class Fetch {
     }
 
     // cloning function
-    public Git cloneRepository(String remoteURL) throws GitAPIException {
-        System.out.println("Cloning repository located at " + remoteURL);
-
+    public Git cloneRepository() throws GitAPIException {
+        System.out.println("Cloning repository located at " + repoUrl);
         try (Git repo = Git.cloneRepository()
-                .setURI(remoteURL)
+                .setURI(this.repoUrl)
                 .setDirectory(createNewFolder())
                 .call()) {
             System.out.println("Repository fetched: " + repo.getRepository().getDirectory());
@@ -44,10 +48,4 @@ public class Fetch {
     public void setRepoUrl(String repoUrl) {
         this.repoUrl = repoUrl;
     }
-
-
-
-
-
-
 }

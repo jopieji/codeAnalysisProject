@@ -9,4 +9,7 @@ The goal of this project is to:
 - practice Java, coding best practices, and working with APIs
 - test, debug, and document the project
 
-### I plan on working on this project in the next few weeks. I intend to finish by Feburary 1st, but work and school might impede this. Still, I will finish this project to gain experience and use the professor's guidance.
+### Notes
+- You need to set your Github credentials in the a file called .env in the root directory.
+- Set your Github username in a variable called GITHUB_USER
+- Set your Github password in a variable called GITHUB_PASS
