@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    private String testURL = "https://github.com/jopieji/instructional-guide";
-
     public static void main(String[] args) throws GitAPIException {
         // eventually implement with keyword arguments
         // private repo to throw auth exception

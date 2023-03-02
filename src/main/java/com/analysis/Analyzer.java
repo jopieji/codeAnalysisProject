@@ -22,13 +22,18 @@ public class Analyzer {
         PMD.runPmd(this.pmdConfiguration());
     }
 
+    public File pointToMain() {
+        String s = this.outFile.toString();
+        s += "/src/main/java/com/analysis/Main.java";
+        return new File(s);
+    }
+
     private PMDConfiguration pmdConfiguration() {
         PMDConfiguration config = new PMDConfiguration();
-
-        config.setInputFilePath(this.outFile.toPath());
+        config.setInputFilePath(this.pointToMain().toPath());
         config.addRuleSet("rulesets/java/quickstart.xml");
-        config.setReportFormat("csv");
-        config.setReportFile("pmd-report.csv");
+        config.setReportFormat("xml");
+        config.setReportFile("pmd-report.xml");
 
         return config;
     }
