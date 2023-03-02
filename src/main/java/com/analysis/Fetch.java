@@ -12,17 +12,24 @@ public class Fetch {
     // PRIVATE FIELDS
     private String repoUrl;
     private Credentials credentials;
+    private File outFile;
 
     // Constructor
     public Fetch(String repoUrl) {
         this.repoUrl = repoUrl;
         this.credentials = new Credentials();
+        this.outFile = null;
+    }
+
+    public File getOutFile() {
+        return this.outFile;
     }
 
     // make new folder for cloned repo
-    private static File createNewFolder() throws IOException {
+    private File createNewFolder() throws IOException {
         FileUtils.deleteDirectory(new File("./clonedRepo"));
         File fp = new File("./clonedRepo");
+        this.outFile = fp;
         if (fp.mkdir()) {
             System.out.println("Directory created ");
         } else {
@@ -36,7 +43,7 @@ public class Fetch {
         System.out.println("Cloning repository located at " + repoUrl);
         try (Git repo = Git.cloneRepository()
                 .setURI(this.repoUrl)
-                .setDirectory(createNewFolder())
+                .setDirectory(this.createNewFolder())
                 .setCredentialsProvider(credentials.createCredentialsProvider())
                 .call()) {
             System.out.println("Repository fetched: " + this.repoUrl);
