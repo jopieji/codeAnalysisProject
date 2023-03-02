@@ -14,7 +14,18 @@ Clone Remote repo into local dir: https://github.com/centic9/jgit-cookbook/blob/
 
 Code Analysis
 Checkstyle
+-- can be run on all files in a directory
+-- https://www.baeldung.com/run-shell-command-in-java to run from shell
+-- checkstyle seems to have Java API
+
 PMD
+-- using Java API of PMD
+-- maybe have user specify files they want analyzed in command line so I don't need to find all classes
+    -- could list java files, have select all option
+-- rule specification needed / configuration via command line
+-- not writing to xml/csv correctly
+https://stackoverflow.com/questions/1844688/how-to-read-all-files-in-a-folder-from-java
+
 FindBugs (SpotBugs now)
 --> all used as plugin in POM, but
         -- i think it is analyzing my project

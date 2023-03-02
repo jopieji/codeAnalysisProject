@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.55.0" timestamp="2023-03-02T11:55:26.494">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.55.0" timestamp="2023-03-02T17:21:18.624">
+<file name="./clonedRepo/src/main/java/com/analysis/Main.java">
+<violation beginline="8" endline="32" begincolumn="19" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="com.analysis" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_design.html#useutilityclass" priority="3">
+All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+</violation>
+<violation beginline="15" endline="15" begincolumn="17" endcolumn="18" rule="CloseResource" ruleset="Error Prone" package="com.analysis" class="Main" method="main" variable="sc" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
+Ensure that resources like this InputStream object are closed after use
+</violation>
+</file>
+<file name="./clonedRepo/src/main/java/com/analysis/Credentials.java">
+<violation beginline="17" endline="17" begincolumn="13" endcolumn="17" rule="AssignmentToNonFinalStatic" ruleset="Error Prone" package="com.analysis" class="Credentials" method="Credentials" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_errorprone.html#assignmenttononfinalstatic" priority="3">
+Possible unsafe assignment to a non-final static field in a constructor.
+</violation>
+<violation beginline="18" endline="18" begincolumn="13" endcolumn="17" rule="AssignmentToNonFinalStatic" ruleset="Error Prone" package="com.analysis" class="Credentials" method="Credentials" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_errorprone.html#assignmenttononfinalstatic" priority="3">
+Possible unsafe assignment to a non-final static field in a constructor.
+</violation>
+<violation beginline="25" endline="25" begincolumn="9" endcolumn="18" rule="UnnecessaryLocalBeforeReturn" ruleset="Code Style" package="com.analysis" class="Credentials" method="createCredentialsProvider" externalInfoUrl="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessarylocalbeforereturn" priority="3">
+Consider simply returning the value vs storing it in local variable 'cp'
+</violation>
+</file>
 </pmd>
