@@ -2,6 +2,7 @@ package com.analysis;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +21,7 @@ public class Fetch {
 
     // make new folder for cloned repo
     private static File createNewFolder() throws IOException {
+        FileUtils.deleteDirectory(new File("./clonedRepo"));
         File fp = new File("./clonedRepo");
         if (fp.mkdir()) {
             System.out.println("Directory created ");
