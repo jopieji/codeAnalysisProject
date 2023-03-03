@@ -42,15 +42,23 @@
       <artifactId>commons-io</artifactId>
       <version>2.11.0</version>
     </dependency>
+    <!-- PMD Dependency -->
     <dependency>
       <groupId>net.sourceforge.pmd</groupId>
       <artifactId>pmd-java</artifactId>
       <version>6.55.0</version>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.7.36</version>
+    </dependency>
+    <!-- Apache POI Dependency -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.2.3</version>
     </dependency>
 
     <!-- optional dependency of commons-compress which is needed by JGit -->
