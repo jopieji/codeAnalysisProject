@@ -16,23 +16,15 @@ import java.util.stream.Stream;
 public class Analyzer {
 
     private File outFile;
+    private String filename;
 
-    public void setOutFile(File f) {
+    public Analyzer(File f, String filename) {
         this.outFile = f;
-    }
-
-    public Analyzer(File f) {
-        this.outFile = f;
+        this.filename = filename;
     }
 
     public void runPMD() {
         PMD.runPmd(this.pmdConfiguration());
-    }
-
-    public File pointToMain() {
-        String s = this.outFile.toString();
-        s += "/src/main/java/com/analysis/Main.java";
-        return new File(s);
     }
 
     public List<Path> createPathList(String dir) {
@@ -44,18 +36,17 @@ public class Analyzer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(result.toString());
         return result;
     }
 
     private PMDConfiguration pmdConfiguration() {
         PMDConfiguration config = new PMDConfiguration();
-        config.setInputPathList(createPathList(this.outFile.toString()));
+        config.setInputPathList(createPathList(outFile.toString()));
         // singular file
         // config.setInputFilePath(this.pointToMain().toPath());
         config.addRuleSet("rulesets/java/quickstart.xml");
         config.setReportFormat("csv");
-        config.setReportFile("pmd-report.csv");
+        config.setReportFile(filename + ".csv");
 
         return config;
     }

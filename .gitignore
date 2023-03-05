@@ -42,3 +42,7 @@ build/
 
 ### clonedRepo ###
 clonedRepo/
+
+### excel and csv files ###
+*.csv
+*.xlsx

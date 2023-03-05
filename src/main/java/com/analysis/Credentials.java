@@ -16,7 +16,7 @@ public class Credentials {
         Dotenv dotenv = Dotenv.load();
         this.user = dotenv.get("GITHUB_USER");
         this.pass = dotenv.get("GITHUB_PASS");
-        System.out.println(user);
+        System.out.println("Cloning via user " + user);
     }
 
     // function to pass back CredentialsProvider
