@@ -21,6 +21,7 @@ public class Fetch {
         this.outFile = null;
     }
 
+    // get file directory where output will go
     public File getOutFile() {
         return this.outFile;
     }
@@ -41,6 +42,7 @@ public class Fetch {
     // cloning function
     public Git cloneRepository() throws GitAPIException {
         System.out.println("Cloning repository located at " + repoUrl);
+        // clone repo with uri, output dir, and credentials
         try (Git repo = Git.cloneRepository()
                 .setURI(this.repoUrl)
                 .setDirectory(this.createNewFolder())
@@ -54,13 +56,5 @@ public class Fetch {
             System.out.println("Clone failed! Make sure your repository is public! Try again");
             return null;
         }
-    }
-
-    // Getters and Setters
-    public String getRepoUrl() {
-        return repoUrl;
-    }
-    public void setRepoUrl(String repoUrl) {
-        this.repoUrl = repoUrl;
     }
 }

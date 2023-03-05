@@ -17,10 +17,17 @@ public class Analyzer {
 
     private File outFile;
     private String filename;
+    private String ruleset;
+    private static ArrayList<String> rulesets = new ArrayList<>(List.of(new String[]{"quickstart", "basic", "strings", "unusedcode", "unnecessary", "design", "coupling", "codesize", "comments"}));
 
-    public Analyzer(File f, String filename) {
+    public static ArrayList<String> getRulesets() {
+        return rulesets;
+    }
+
+    public Analyzer(File f, String filename, String ruleset) {
         this.outFile = f;
         this.filename = filename;
+        this.ruleset = ruleset;
     }
 
     public void runPMD() {
@@ -39,6 +46,8 @@ public class Analyzer {
         return result;
     }
 
+
+    // configure PMD for analysis
     private PMDConfiguration pmdConfiguration() {
         PMDConfiguration config = new PMDConfiguration();
         config.setInputPathList(createPathList(outFile.toString()));
