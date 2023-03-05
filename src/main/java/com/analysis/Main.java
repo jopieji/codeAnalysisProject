@@ -1,5 +1,6 @@
 package com.analysis;
 
+import com.aspose.cells.Workbook;
 import org.eclipse.jgit.api.errors.GitAPIException;
 
 import java.io.File;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws GitAPIException {
+    public static void main(String[] args) throws Exception {
         // eventually implement with keyword arguments
         // private repo to throw auth exception
 
@@ -31,7 +32,11 @@ public class Main {
         Analyzer analyzer = new Analyzer(f);
         analyzer.runPMD();
 
+        // save to excel
+        CSVToExcel converter = new CSVToExcel();
+        Workbook wb = converter.csvToExcel("pmd-report.csv");
+
         // maybe use JGit instead to show new directory created or contents
-        System.out.println("Done! Check the pmd-report.csv file for output");
+        System.out.println("Done! Check the pmd-report.csv file or pmd-report.xlsx file for output");
     }
 }

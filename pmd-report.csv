@@ -1,6 +1,6 @@
 "Problem","Package","File","Priority","Line","Description","Rule set","Rule"
+"1","com.analysis","./clonedRepo/src/main/java/com/analysis/Main.java","3","8","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
+"2","com.analysis","./clonedRepo/src/main/java/com/analysis/Main.java","3","15","Ensure that resources like this InputStream object are closed after use","Error Prone","CloseResource"
 "1","com.analysis","./clonedRepo/src/main/java/com/analysis/Credentials.java","3","17","Possible unsafe assignment to a non-final static field in a constructor.","Error Prone","AssignmentToNonFinalStatic"
 "2","com.analysis","./clonedRepo/src/main/java/com/analysis/Credentials.java","3","18","Possible unsafe assignment to a non-final static field in a constructor.","Error Prone","AssignmentToNonFinalStatic"
 "3","com.analysis","./clonedRepo/src/main/java/com/analysis/Credentials.java","3","25","Consider simply returning the value vs storing it in local variable 'cp'","Code Style","UnnecessaryLocalBeforeReturn"
-"1","com.analysis","./clonedRepo/src/main/java/com/analysis/Main.java","3","8","All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.","Design","UseUtilityClass"
-"2","com.analysis","./clonedRepo/src/main/java/com/analysis/Main.java","3","15","Ensure that resources like this InputStream object are closed after use","Error Prone","CloseResource"
