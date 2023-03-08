@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="585c5942-96af-460d-ab7e-c1b9ab65a099" name="Changes" comment="pmd without config finished and amended notes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE-350-Bonus_Implementation_Project.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pmd-report.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pmd-report.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/analysis/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/analysis/Analyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/analysis/CSVToExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/analysis/CSVToExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/analysis/Fetch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/analysis/Fetch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/analysis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/analysis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/analysis/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/analysis/Credentials.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

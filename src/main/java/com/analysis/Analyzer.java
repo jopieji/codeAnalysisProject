@@ -18,7 +18,7 @@ public class Analyzer {
     private File outFile;
     private String filename;
     private String ruleset;
-    private static ArrayList<String> rulesets = new ArrayList<>(List.of(new String[]{"quickstart", "basic", "strings", "unusedcode", "unnecessary", "design", "coupling", "codesize", "comments"}));
+    private static ArrayList<String> rulesets = new ArrayList<>(List.of(new String[]{"quickstart", "basic", "unusedcode", "unnecessary", "design", "coupling", "codesize", "comments"}));
 
     public static ArrayList<String> getRulesets() {
         return rulesets;
@@ -53,7 +53,7 @@ public class Analyzer {
         config.setInputPathList(createPathList(outFile.toString()));
         // singular file
         // config.setInputFilePath(this.pointToMain().toPath());
-        config.addRuleSet("rulesets/java/quickstart.xml");
+        config.addRuleSet("rulesets/java/" + ruleset + ".xml");
         config.setReportFormat("csv");
         config.setReportFile(filename + ".csv");
 

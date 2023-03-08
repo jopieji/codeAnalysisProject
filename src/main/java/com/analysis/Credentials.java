@@ -25,12 +25,4 @@ public class Credentials {
         return cp;
     }
 
-    // getters for credentials
-    public String getUser() {
-        return user;
-    }
-
-    public String getPass() {
-        return pass;
-    }
 }
